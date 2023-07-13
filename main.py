@@ -1,8 +1,9 @@
 from database import *
 from get_input import *
 
+
 def get_entry_input():
-    print("\n"*100)
+    clear()
     title = get_title()
     author = get_author()
     print("Genres")

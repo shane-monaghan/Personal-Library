@@ -1,3 +1,6 @@
+from os import system, name
+
+
 def get_title():
     title = ""
     while title.strip() == "":
@@ -61,4 +64,10 @@ def get_continue():
         return True
     return False
 
+
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
 
