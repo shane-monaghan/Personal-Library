@@ -2,6 +2,10 @@ from database import *
 from get_input import *
 
 
+def main_menu():
+    clear()
+
+
 def get_entry_input():
     clear()
     title = get_title()

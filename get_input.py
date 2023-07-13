@@ -47,7 +47,7 @@ def get_progress():
     for key in progress_dict.keys():
         print(key + ". " + progress_dict[key])
     while progress not in progress_dict.keys():
-        progress = input("Enter the number of the book's genre: ")
+        progress = input("Enter the number of the book's current state: ")
         progress = progress.strip()
     progress = progress_dict[progress]
     return progress
@@ -63,6 +63,19 @@ def get_continue():
     if to_continue == "1":
         return True
     return False
+
+
+def get_menu_choice():
+    choice = ""
+    choices = ["1", "2", "3", "4"]
+    print("1.", "Add a Book")
+    print("2.", "Search for a Book")
+    print("3.", "Update a Book")
+    print("4.", "Delete a Book")
+    while choice not in choices:
+        choice = input("Enter the number of what you would like to do: ")
+        choice = choice.strip()
+    return choice
 
 
 def clear():
