@@ -16,7 +16,7 @@ def create_database():
     conn.close()
 
 
-def add_book(title, author, genre, progress):
+def add_entry(title, author, genre, progress):
     conn = sqlite3.connect("library.db")
     cursor = conn.cursor()
     insert_tuple = (title, author, genre, progress)
