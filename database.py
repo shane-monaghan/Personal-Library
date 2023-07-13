@@ -26,10 +26,22 @@ def add_book(title, author, genre, progress):
     cursor.close()
     conn.close()
 
+
 def view_all():
     conn = sqlite3.connect("library.db")
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM books")
+    for row in cursor:
+        print(row)
+    cursor.close()
+    conn.close()
+
+
+def view_by_title(title):
+    conn = sqlite3.connect("library.db")
+    cursor = conn.cursor()
+    search_string = "%" + title + "%"
+    cursor.execute("SELECT * FROM books WHERE title LIKE (?)", (search_string,))
     for row in cursor:
         print(row)
     cursor.close()
