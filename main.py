@@ -1,6 +1,10 @@
 from database import *
 from get_input import *
 
-create_database()
-#add_entry('Percy Jackson', 'Rick Riordan', 'Fantasy', 'TBR')
-get_progress()
+
+def get_entry_input():
+    title = get_title()
+    author = get_author()
+    genre = get_genre()
+    progress = get_progress()
+    add_entry(title, author, genre, progress)
